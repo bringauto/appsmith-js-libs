@@ -10,7 +10,7 @@ export class OAuthRefreshToken {
 	oauthServerMaxResponseTimeInmS = 10 * 1000;
 
 	constructor(oauth2) {
-		if(typeof oauth2 !== 'undefined') {
+		if(typeof oauth2 === 'undefined') {
 			throw new Error("Cannot create OAuth2RefreshToken class - OAuth2 instance is undefined");
 		}
 		if(typeof oauth2 !== 'OAuth2') {
@@ -91,7 +91,7 @@ export class OAuth {
 		token_endpoint_auth_method: 'client_secret_basic',
 	};
 
-	exmapleConfig = {
+	exampleConfig = {
 		client_id:       "",
 		client_secret:   "",
 		issuer_url:      "",
@@ -109,7 +109,7 @@ export class OAuth {
 		this.issuerUrl = config.issuer_url;
 		this.redirectUri = config.redirect_uri;
 		this.oauth_webapi_js = config.oauth_webapi_js;
-		this.oauthClientParams.client_id = config.client_id
+		this.oauthClientParams.client_id = config.client_id;
 		this.oauthClientParams.client_secret = config.client_secret;
 	}
 
