@@ -13,8 +13,8 @@ export class OAuthRefreshToken {
 		if(typeof oauth2 === 'undefined') {
 			throw new Error("Cannot create OAuth2RefreshToken class - OAuth2 instance is undefined");
 		}
-		if(typeof oauth2 !== 'OAuth2') {
-			throw new Error("Cannot create OAuth2RefreshToken class");
+		if(typeof oauth2 !== 'OAuth') {
+			throw new Error("Cannot create OAuth2RefreshToken class. Invalid OAuth instance provided.");
 		}
 		this.oauth2 = oauth2;
 	}
