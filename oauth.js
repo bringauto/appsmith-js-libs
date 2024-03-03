@@ -91,23 +91,26 @@ export class OAuth {
 		token_endpoint_auth_method: 'client_secret_basic',
 	};
 
+	exmapleConfig = {
+		client_id:       "",
+		client_secret:   "",
+		issuer_url:      "",
+		redirect_uri:    "",
+		oauth_webapi_js: null,
+	};
+
 	/**
 	 * Constructor is defined only as part of the class not part of the Appsmith test app 
-	 * @param {*} clientId 
-	 * @param {*} clientSecret 
-	 * @param {*} issuerUrl 
-	 * @param {*} redirectUri 
+	 * @param {Object} config
 	 */
-	constructor(clientId, clientSecret, issuerUrl, redirectUri) {
-		if(typeof oauth_webapi_js === 'undefined') {
-			throw new Error("Cannot create OAuth2 class - oauth_webapi_js is undefined (oauth4webapi.js is not loaded)");
-		}
-		this.clientId = clientId;
-		this.clientSecret = clientSecret;
-		this.issuerUrl = issuerUrl;
-		this.redirectUri = redirectUri;
-		this.oauthClientParams.client_id = clientId;
-		this.oauthClientParams.client_secret = clientSecret;
+	constructor(config) { //clientId, clientSecret, issuerUrl, redirectUri) {
+		this.clientId = config.client_id;
+		this.clientSecret = config.client_secret;
+		this.issuerUrl = config.issuer_url;
+		this.redirectUri = config.redirect_uri;
+		this.oauth_webapi_js = config.oauth_webapi_js;
+		this.oauthClientParams.client_id = config.client_id
+		this.oauthClientParams.client_secret = config.client_secret;
 	}
 
 	///
