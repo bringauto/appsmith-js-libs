@@ -53,7 +53,7 @@ export class OAuthRefreshToken {
 			}
 			console.log("TIMER: token refresh - timer started");
 			var period = this.computeAccessTokenRefreshPeriod(appsmith.store.token['expires_in']);
-			console.info("TIME: refresh period " + period);
+			console.info("TIMER: refresh period " + period);
 			clearInterval("OAuthRefreshCheckTimer");
 			setInterval(refreshTokenCallback, period, "OAuthRefreshTimer");
 		};
@@ -197,7 +197,7 @@ export class OAuth {
 			throw new Error(); // Handle OAuth 2.0 response body error
 		}
 
-		console.log('Access Token Response', result);
+		console.log('Access Token Response OK');
 
 		// Clear storage to get rid of all leftovers and store token
 		clearStore();
@@ -227,7 +227,7 @@ export class OAuth {
 			throw new Error() // Handle OAuth 2.0 response body error
 		}
 
-		console.log('Access Token Response', result);
+		console.log('Access Token Response OK');
 
 		//
 		// There is no need to clear storage in token refresh
