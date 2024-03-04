@@ -16,13 +16,13 @@ GitHub URI template: `https://cdn.jsdelivr.net/gh/[USER]/[REPO]@[VERSION]/[FILE]
 
 URL: https://cdn.jsdelivr.net/gh/bringauto/appsmith-js-libs@__tag__/oauth4webapi.js`
 
-where __tag__ is a palceholder which need to be replaced by valig git tag of this repository!
+where *\__tag__* is a palceholder which need to be replaced by valig git tag of this repository!
 
 ### oath.js
 
 URL: https://cdn.jsdelivr.net/gh/bringauto/appsmith-js-libs@__tag__/oauth.js`
 
-where __tag__ is a palceholder which need to be replaced by valig git tag of this repository!
+where *\__tag__* is a palceholder which need to be replaced by valig git tag of this repository!
 
 - oauth.js os developed by BringAuto Appsmith as part of "Library Development" space.
 - Appsmith app "Library Development" / "OAuth2 Dev App" - raw development of OAuth2 login
