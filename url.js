@@ -8,17 +8,17 @@ export function ConcentateWithNewline(arrayList) {
 }
 
 export function catchError() {
-    window.addEventListener('error', function(event) {
-      if (event.target instanceof HTMLScriptElement ||
-          event.target instanceof HTMLLinkElement ||
-          event.target instanceof HTMLImageElement) {
-        console.log('Resource loading error: ' + event.target.src);
-      } else {
-        console.log('Error message: ' + event.message);
-        console.log('Source: ' + event.filename);
-        console.log('Line: ' + event.lineno);
-        console.log('Column: ' + event.colno);
-        console.log('Error object: ' + event.error);
-      }
-    }, true);
+    // Handling runtime errors
+    const window_onerror = window.onerror;
+    window.onerror = function(message, source, lineno, colno, error) {
+        console.log('Error message: ' + message);
+        console.log('Source: ' + source);
+        console.log('Line: ' + lineno);
+        console.log('Column: ' + colno);
+        console.log('Error object: ' + error);
+        if(window_onerror) {
+            return window_onerror(message, source, lineno, colno, error);
+        }
+        return true;
+      };
 }
